@@ -1,18 +1,17 @@
-
 import pandas as pd
 from sqlalchemy import create_engine
 
 
-# Postgres database connection 
-engine = create_engine('postgresql://admin:admin@localhost:5432/papers')
+# Postgresql database connection 
+engine = create_engine('postgresql://username:password@host:port/databasename')
 
 # data to import to database
-path = {'accounts':'/Volumes/MacBackup/DEV_Tuts/projects/parch_posey_DB/accounts.xlsx',
-		'orders':'/Volumes/MacBackup/DEV_Tuts/projects/parch_posey_DB/orders.xlsx',
-		'region':'/Volumes/MacBackup/DEV_Tuts/projects/parch_posey_DB/region.xlsx',
-		'salesreps':'/Volumes/MacBackup/DEV_Tuts/projects/parch_posey_DB/sales_reps.xlsx',
-		'webevents':'/Volumes/MacBackup/DEV_Tuts/projects/parch_posey_DB/web_events.xlsx'
-		}
+path = {'accounts':'drivepath/accounts.xlsx',
+	'orders':'path/orders.xlsx',
+	'region':'drivepath/region.xlsx',
+	'salesreps':'drivepath/sales_reps.xlsx',
+	'webevents':'drivepath/web_events.xlsx'
+	}
 
 # loop through table name and path and import to database
 for tableName,datapath in path.items():
